@@ -36,6 +36,7 @@
   .artista b{display:block;margin-top:8px;color:#ffcc00}
   footer{background:#111;text-align:center;padding:20px;font-size:13px;color:#aaa}
   .whatsapp{background:#25D366;color:white;padding:13px 24px;border-radius:30px;text-decoration:none;display:inline-block;font-weight:bold;margin-top:12px}
+  .btn-play{background:#25D366;color:white;border:none;padding:14px 28px;border-radius:30px;font-weight:bold;font-size:18px;margin:12px 0;cursor:pointer}
 </style>
 </head>
 <body>
@@ -66,9 +67,10 @@
   <div class="card">
     <h3>🎧 AHORA SONANDO</h3>
     <p><b>TRES VOCES, UN PUEBLO</b><br>Tropical Flow Radio TV<br>Plena y Merengue desde El Pino</p>
-   <div id="player" style="width:100%; height:220px; border-radius:15px; overflow:hidden;"></div>
+   <div id="player" style="width:100%; height:220px; border-radius:15px; overflow:hidden; background:#000;"></div>
 <h3 id="ahoraSuena" style="color:#fff; margin:10px 0; text-align:center;">🎵 Cargando Radio...</h3>
 <div style="text-align:center;">
+<button class="btn-play" onclick="darPlay()">▶️ DARLE PLAY A LA RADIO</button><br>
 <button onclick="anterior()" style="background:#fff; color:#000; border:none; padding:10px 15px; border-radius:20px; font-weight:bold;">⏮️ ANTERIOR</button>
 <button onclick="siguiente()" style="background:#FFD700; color:#000; border:none; padding:10px 20px; border-radius:20px; font-weight:bold;">SIGUIENTE ⏭️</button>
 <p style="font-size:12px; color:#aaa;">Canción <span id="numero">1</span> de <span id="total"></span></p>
@@ -78,11 +80,13 @@
 const lista = ["GQ2ZLGRsRk4","RBE8A9rAj8Y","XYe0ZHVvVig","h86xW_G-j4s","5pKPlIlQa_8","wgqGHqhEZ8M","auTHP2prrxw","CL7m60BISiw","4jdbpZVzlf4","X_Df1rsXBjE","RWp76Pj0RUo","M9wQdkQicbk","FCu8-sim5F4","O6xVXaBcOac","jTqKxMTtVEI","4tXLT0hN8n8","n8RMGnc8v_o","XSAM8sUBAX4","tyqiwlOuKDA","tpi8zLE3Kqw","KZsmeh2122c","7IZF99TldP4","8bK5FzYBOX0","RcRjOpvks_w","fe474JBP5bo","hAwpckV1zJA","GfSmKZKUQgI","VQy8mWQ44IE","LYgUyNxcClc","Feo_d-SfjV4","9s5L2N86BhI","obW4BaZucn4","-rKiKWl5nrI","CzXfeG1wp7k","-YIJLs19HJA","hpom3ZHzfsc","OMEUGE3YBig","Lqt8KchvPWs","auhWaaNIB5Q","hEgqP_4DUKQ","IF6B0L5G45U","H5ZrvB6FEyc","aH-4J_Q0lZk","w5L_iNnWgUo","d6brc8barHQ","4HF0QkBYRRc","r9lBTeBqgUc","BrmcXdYuycU","vwdopSnsMLs","lb3lY9c2LPk","-XOt6cizYdo","4vkhB6MiJ-k","BziR7lSh1Pw","4cTZpoRd54k","Q1u_kOWlgs4","Ob9I449fZn4","21Pk_j4buY4","t_LrxMpLxis","MTuM7D2p3Cg","jF2XJxAp_v8","kf6RLeOs5ow","6wbwxXcJkGc","i-HD5_2WDYU","2ioucs6HOUU","IQ3wXbkJJZA","x1dbS39QrlI","cJ5gu-mlyv4","olJRGdZKv8Q","vrfFNZZXFsE","3oh5z387ozY","OTSVayj-9Os","FbRSDpKEyac","tCl5mJkta04","Ya9r0wGichw","pt92h8rvZxU","s-mDRPkEZBk","pvAthjIlnuc","aNOiqSYOe9E","DeDPrhD_BLw","6654k9MfoBA","mTSm_5sOFvQ","WjR7mf0S6wQ","KB0Egwr3BkY","jeUo8mLQbGg","c1EwHvbPv0o","JqfDYSLP1Co","7gS7-_9PBxM","yVBHbPsHIjk","OrRPR0AdPV4","Tf2o36-T2XY","AEj6xbGy64c","idpPD42Nh7I","Q1EyMFTPZrs","8GZfyUKXugQ","hW2mAMEx8mo","2ZXs_FrB7co","D5y4xpKdux4","1Z_lmKtf6RY","J1Dz86UCL_M","c5NA5EBpOw4","40XaVZBfXmc","9CZ9cYu-yCk","c1j1QbnEvFA","nddBuDbhlkQ","W4Gbz8DhDKs","yHHX8bsht1w","tYYa-djM5j8","l8wTJMbCsQ8","OixrDR8sVhc","FVYjdghFIfo","VBdLpH8R3Y8","2r7CnIp9oLI","-vj-a-e0Rf4","34eiZ9Hd-fA","pjrhSRCIZDk","mKjKgaOWQn8","YHQJkK9NpE0","nGsT-sqaQNg","o40JNCThI8M","rWhjBlsXhVw","mrXKNFXHEqo","7tE_xKxat9c","u9b83ujltH8","TZMCYoWntqY","U1drf9cCHHk","qVzECaje5CE","Bsmz-VxXpyY","FG1Va_rL6W0","PCDYOTWQ9uc","doD3StRKwKA","iLuKRoUi4Lc","PKolClrUVSQ","xH_qmGwHIhY","OPmAxqBfR3E","BnhZkrNclVw","SFmXwGf1kYU","DAbkUKBLvak","UK4aj9gV66s","ILWO9Hyo_yo","_bFrGBuzxew","phWbH7OCcHk","fnGZn3tkjYA","Er52V4C62wU","NBOlGhmv4lw","kRZjFGGCR24","beYTZkJMifw","88WnXr9X4yM","bbcs8Jv_k6w","w3ybiJjm0wo","CXlqcerd2Ew","meyVBz_Pl5Q","rZ-8_R2L19o","cv5uXAxaWDc","0iGJpS2Cq8Q","LYN2UfUwKnE","A3-XQXcxM0w","Qvxrrwj64hU","j1IrGdubgbQ","nN36VD0KJWM","l3bLYUyXodg","3nBOTAh6IZk","dnDAXZanv2U","LSNOmJcDotk","WZ8aVVeObY4","zI7B_VzfvAg","_B-pvX_aCvs","iJODIeE7YDI","qXYh87QuIJA","dj2HB8Og7pc","_uaVW3Hb5-A","az_NAGXp62U","iLwcDQF3Lnw","FwLrBJsI2dA","TgB4Q1Ksngw","ImjU6A3-iuw","hBcgEwQlYq8","G45a_RfjF6U","ZvXQYzJotrc","PjASVaS1t-c","hjiUmXelGec","AMZib_rbtKY","sFBVPMbAKYE","ECqNj6oRkJA","EsPLJiiewLU","AHBbhiXeLlg","HKImVnl-gVE","PL9Tjx_4qMg","pABUiQHNilQ","RHcCi4oCSII","3bRgXZWBZso","cDNLpf_hBL4","Wf97aNEgkek","XLFzxttqW3I","aWBrILDNR60","-AASFkfoZ4U","7GUWKS_FGWg","qUqPWYGZuFg","61BiEq0JmB0","Yy63WTN6dUc","RIsCkK42TrA","P9R21ADoSNE","9qvV4MC4nKU","F3ttnmlARac","zseh7JgR8Ag"];
 let indice = 0; let player;
 document.getElementById('total').innerText = lista.length;
-function onYouTubeIframeAPIReady(){ player = new YT.Player('player', { height: '220', width: '100%', videoId: lista[0], playerVars: { autoplay: 1, controls: 1 }, events: { onStateChange: onPlayerStateChange } }); actualizar(); }
+function onYouTubeIframeAPIReady(){ player = new YT.Player('player', { height: '220', width: '100%', videoId: lista[0], playerVars: { autoplay: 1, controls: 1, playsinline: 1, rel: 0 }, events: { onStateChange: onPlayerStateChange, onError: onPlayerError } }); actualizar(); }
 function onPlayerStateChange(event){ if(event.data == YT.PlayerState.ENDED){ siguiente(); } }
+function onPlayerError(event){ siguiente(); }
 function actualizar(){ document.getElementById('numero').innerText = indice + 1; document.getElementById('ahoraSuena').innerText = '🎵 Sonando ahora: Canción ' + (indice+1); }
-function siguiente(){ indice = (indice + 1) % lista.length; player.loadVideoById(lista[indice]); actualizar(); }
-function anterior(){ indice = (indice - 1 + lista.length) % lista.length; player.loadVideoById(lista[indice]); actualizar(); }
+function darPlay(){ if(player && player.playVideo){ player.playVideo(); } }
+function siguiente(){ if(!player) return; indice = (indice + 1) % lista.length; player.loadVideoById(lista[indice]); actualizar(); }
+function anterior(){ if(!player) return; indice = (indice - 1 + lista.length) % lista.length; player.loadVideoById(lista[indice]); actualizar(); }
 </script>
   </div>
 
@@ -108,7 +112,6 @@ function anterior(){ indice = (indice - 1 + lista.length) % lista.length; player
     <h3>📻 PIDE TU CANCIÓN</h3>
     <p>¿Quieres que suene tu barrio en la radio?<br>Escríbenos y lo ponemos en Tropical Flow.</p>
     <a class="whatsapp" href="https://wa.me/19393142657">💬 ESCRÍBENOS POR WHATSAPP</a>
-   
     <p style="margin-top:10px;">📍 El Pino, Villalba, Puerto Rico 🇵🇷<br>📺 Tropical Flow Radio TV - Tu Radio, Tu Familia</p>
     <br>
     <a class="btn" href="tv.html">📺 IR A TROPICAL FLOW TV</a>
@@ -122,3 +125,4 @@ function anterior(){ indice = (indice - 1 + lista.length) % lista.length; player
 
 </body>
 </html>
+  
