@@ -6,136 +6,152 @@
 <title>Tropical Flow TV - Muñequitos Biblia</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-  body{background:#0a0a0a;color:white}
-  header{
-    background:linear-gradient(90deg,#ff0000,#ffcc00,#0050ff);
-    padding:18px 15px;text-align:center;
-  }
-  header h1{font-size:28px;text-shadow:2px 2px 0 #000}
-  header p{font-weight:bold;margin-top:5px}
-  .btn-radio{
-    display:inline-block;margin-top:12px;background:#25D366;color:white;
-    padding:11px 24px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:16px;
-  }
-  nav{background:#111;display:flex;justify-content:center;gap:15px;padding:12px;flex-wrap:wrap}
-  nav a{color:#ffcc00;text-decoration:none;font-weight:bold}
-  .section{padding:22px 15px;max-width:900px;margin:auto}
-  .card{background:#1a1a1a;border:2px solid #ffcc00;border-radius:15px;padding:20px;margin-bottom:18px;text-align:center}
-  .card h3{color:#ffcc00;font-size:21px;margin-bottom:10px}
-  .card p{font-size:15px;line-height:1.6}
-  .btn-play{background:#25D366;color:white;border:none;padding:14px 28px;border-radius:30px;font-weight:bold;font-size:18px;margin:12px 0;cursor:pointer}
-  .btn-nav{background:#fff;color:#000;border:none;padding:10px 15px;border-radius:20px;font-weight:bold;cursor:pointer}
-  .btn-next{background:#FFD700;color:#000;border:none;padding:10px 20px;border-radius:20px;font-weight:bold;cursor:pointer}
-  .lista{text-align:left;max-width:500px;margin:15px auto 0;background:#222;border-radius:12px;padding:12px}
-  .lista div{padding:8px;border-bottom:1px solid #444;cursor:pointer;font-size:14px}
-  .lista div:last-child{border-bottom:none}
-  .lista div.activo{background:#ffcc00;color:#000;font-weight:bold;border-radius:8px}
+  body{background:#0f0f1a;color:white}
+  header{background:linear-gradient(90deg,#ff5c8a,#00d2c6);padding:20px 15px;text-align:center}
+  header h1{font-size:32px;text-shadow:2px 2px 0 #000;line-height:1.1}
+  header p{font-weight:bold;margin-top:6px;font-size:14px}
+  .btn-radio{display:inline-block;margin-top:12px;background:#ff5c8a;color:white;padding:11px 24px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:15px;border:2px solid white}
+  .section{padding:20px 15px;max-width:950px;margin:auto}
+  .video-box{background:#000;border:3px solid #ff5c8a;border-radius:18px;overflow:hidden}
+  #player{width:100%;height:280px}
+  .titulo-video{text-align:center;margin:14px 0 6px;font-size:20px;color:#ffcc00}
+  .sub-video{text-align:center;color:#ccc;font-size:14px}
+  .btn-play{display:block;margin:14px auto;background:#25D366;color:white;border:none;padding:14px 30px;border-radius:30px;font-weight:bold;font-size:18px;cursor:pointer}
+  .controles{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  .controles button{border:none;padding:11px 18px;border-radius:20px;font-weight:bold;cursor:pointer}
+  .btn-ant{background:white;color:#000}
+  .btn-sig{background:#FFD700;color:#000}
+  .categorias{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0}
+  .categorias button{border:2px solid #ff5c8a;background:#1a1a2e;color:white;padding:11px 16px;border-radius:30px;font-weight:bold;cursor:pointer;font-size:14px}
+  .categorias button.activo{background:#ff5c8a;color:white}
+  .card{background:#1a1a2e;border:2px solid #00d2c6;border-radius:15px;padding:16px;margin-bottom:18px;text-align:center}
+  .card h3{color:#00d2c6;font-size:20px;margin-bottom:8px}
+  .card p{font-size:14px;line-height:1.6;color:#ddd}
+  .recomendados{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  .rec{background:#222;border-radius:14px;padding:12px;text-align:center;cursor:pointer;border:1px solid #444}
+  .rec span{font-size:38px;display:block}
+  .rec b{display:block;margin-top:6px;color:#ffcc00;font-size:14px}
+  .rec small{color:#aaa;font-size:12px}
+  .lista-videos{margin-top:12px;text-align:left}
+  .item-video{display:flex;gap:10px;align-items:center;background:#222;border-radius:12px;padding:10px;margin-bottom:8px;cursor:pointer;border:1px solid #444}
+  .item-video.activo{background:#ff5c8a;border-color:white}
+  .item-video .emoji{font-size:28px}
+  .item-video b{font-size:14px}
+  .item-video small{display:block;color:#ccc;font-size:12px}
   footer{background:#111;text-align:center;padding:20px;font-size:13px;color:#aaa}
   .whatsapp{background:#25D366;color:white;padding:13px 24px;border-radius:30px;text-decoration:none;display:inline-block;font-weight:bold;margin-top:12px}
-  .btn{display:inline-block;margin-top:18px;background:#ff0000;color:white;padding:13px 26px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:17px}
+  .btn{display:inline-block;margin-top:14px;background:#ff0000;color:white;padding:12px 24px;border-radius:30px;text-decoration:none;font-weight:bold}
+  @media(max-width:600px){ .recomendados{grid-template-columns:1fr} #player{height:220px} }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>📺 TROPICAL FLOW TV</h1>
+  <h1>🌸📺 TROPICAL FLOW TV 📺🌸</h1>
   <p>MUÑEQUITOS DE LA BIBLIA - PARA TODA LA FAMILIA 🙏🇵🇷</p>
-  <a class="btn-radio" href="index.html">📻 VOLVER A LA RADIO</a>
+  <a class="btn-radio" href="index.html">💖 VOLVER A RADIO</a>
 </header>
 
-<nav>
-  <a href="index.html">📻 RADIO</a>
-  <a href="#tv">📺 TV</a>
-  <a href="#contacto">CONTACTO</a>
-</nav>
+<div class="section">
+  <!-- VIDEO GRANDE -->
+  <div class="video-box"><div id="player"></div></div>
+  <h2 class="titulo-video" id="ahoraSuena">🌈 Arca de Noé - Muñequitos Biblia</h2>
+  <p class="sub-video">Video <span id="numero">1</span> de <span id="total"></span> • Tropical Flow TV • El Pino, Villalba</p>
+  <button class="btn-play" onclick="darPlay()">▶️ DARLE PLAY A LA TV</button>
+  <div class="controles">
+    <button class="btn-ant" onclick="anterior()">⏮️ ANTERIOR</button>
+    <button class="btn-sig" onclick="siguiente()">SIGUIENTE ⏭️</button>
+  </div>
 
-<div class="section" id="tv">
+  <!-- TUS 5 BOTONES -->
+  <div class="categorias">
+    <button id="cat-todos" class="activo" onclick="filtrar('todos')">✨ TODOS</button>
+    <button id="cat-munequitos" onclick="filtrar('munequitos')">🧒 Muñequitos Biblia</button>
+    <button id="cat-ensenanzas" onclick="filtrar('ensenanzas')">📖 Enseñanzas</button>
+    <button id="cat-peliculas" onclick="filtrar('peliculas')">🎬 Películas</button>
+    <button id="cat-programas" onclick="filtrar('programas')">📺 Programas</button>
+    <button id="cat-anuncios" onclick="filtrar('anuncios')">📢 Anuncios</button>
+  </div>
+
+  <!-- LISTA DE VIDEOS -->
+  <div class="lista-videos" id="listaVideos"></div>
+
+  <!-- RECOMENDADOS COMO NETFLIX -->
   <div class="card">
-    <h3>📺 AHORA EN TV</h3>
-    <p><b>Muñequitos de la Biblia</b><br>Tropical Flow TV<br>Desde El Pino, Villalba - Para los niños y la familia</p>
-    <div id="player" style="width:100%; height:260px; border-radius:15px; overflow:hidden; background:#000;"></div>
-    <h3 id="ahoraSuena" style="color:#fff; margin:10px 0; text-align:center;">🎬 Cargando TV...</h3>
-    <div style="text-align:center;">
-      <button class="btn-play" onclick="darPlay()">▶️ DARLE PLAY A LA TV</button><br>
-      <button class="btn-nav" onclick="anterior()">⏮️ ANTERIOR</button>
-      <button class="btn-next" onclick="siguiente()">SIGUIENTE ⏭️</button>
-      <p style="font-size:12px; color:#aaa;">Video <span id="numero">1</span> de <span id="total"></span></p>
+    <h3>⭐ RECOMENDADOS PARA TI</h3>
+    <p>Como Netflix, baja y escoge lo que quieres ver</p>
+    <div class="recomendados">
+      <div class="rec" onclick="verVideo(0)"><span>🌈</span><b>Arca de Noé</b><small>Cartoon Bible Kids • Muñequitos</small></div>
+      <div class="rec" onclick="verVideo(3)"><span>🎬</span><b>Noche de Película Familiar</b><small>Película Familiar • 1 hora</small></div>
+      <div class="rec" onclick="verVideo(5)"><span>⛪</span><b>Enseñanza en la Iglesia</b><small>Enseñanza • Domingo</small></div>
+      <div class="rec" onclick="verVideo(8)"><span>🍞</span><b>Anuncio Local - Panadería</b><small>Anuncio • Villalba</small></div>
     </div>
+  </div>
 
-    <div class="lista" id="listaVideos"></div>
+  <div class="card">
+    <h3>🙏 PARA LA FAMILIA</h3>
+    <p>Historias de la Biblia para los niños de El Pino y todo Puerto Rico.<br>Dale PLAY y deja que corra solito, va cambiando de muñequito en muñequito.<br>¡Fe, familia y alegría!</p>
+    <p style="margin-top:12px;">¿Quieres que pongamos tu video, tu negocio o tu iglesia?<br>Escríbenos y lo ponemos en Tropical Flow TV.</p>
+    <a class="whatsapp" href="https://wa.me/19393142657">💬 ESCRÍBENOS POR WHATSAPP</a>
+    <br><a class="btn" href="index.html">📻 IR A LA RADIO</a>
+  </div>
+</div>
+
+<footer>© 2026 Tropical Flow Radio TV - Desde El Pino, Villalba, PR<br>¡Nos vemos en las patronales! 🎉</footer>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-const lista = [
-  {id:"o7fG2tP2y8U", titulo:"1. La Creación - Muñequitos Biblia"},
-  {id:"hZ1o3r8v1Y0", titulo:"2. Noé y el Arca - Muñequitos Biblia"},
-  {id:"t4v8v2y1Q8A", titulo:"3. David y Goliat - Muñequitos Biblia"},
-  {id:"Y8fK8qQ2J9k", titulo:"4. Jonás y la Ballena - Muñequitos Biblia"},
-  {id:"k9m1Zx2v3pQ", titulo:"5. El Nacimiento de Jesús - Muñequitos Biblia"},
-  {id:"m2p5v7x9q1A", titulo:"6. Los Milagros de Jesús - Muñequitos Biblia"},
-  {id:"p3q8r2s5t7U", titulo:"7. La Parábola del Buen Samaritano"},
-  {id:"q4r9s3t6u8V", titulo:"8. Daniel en el Foso de los Leones"},
-  {id:"r5s0t4u7v9W", titulo:"9. Moisés y el Mar Rojo"},
-  {id:"s6t1u5v8w0X", titulo:"10. La Historia de José"}
+const todosVideos = [
+  {id:"o7fG2tP2y8U", titulo:"🌈 Arca de Noé - Muñequitos Biblia", cat:"munequitos", emoji:"🌈"},
+  {id:"hZ1o3r8v1Y0", titulo:"🦁 Daniel en el Foso de los Leones", cat:"munequitos", emoji:"🦁"},
+  {id:"t4v8v2y1Q8A", titulo:"🪨 David y Goliat - Muñequitos Biblia", cat:"munequitos", emoji:"🪨"},
+  {id:"Y8fK8qQ2J9k", titulo:"🐳 Jonás y la Ballena", cat:"munequitos", emoji:"🐳"},
+  {id:"k9m1Zx2v3pQ", titulo:"👶 El Nacimiento de Jesús", cat:"munequitos", emoji:"👶"},
+  {id:"m2p5v7x9q1A", titulo:"📖 La Parábola del Buen Samaritano", cat:"ensenanzas", emoji:"📖"},
+  {id:"p3q8r2s5t7U", titulo:"⛪ Enseñanza en la Iglesia - Domingo", cat:"ensenanzas", emoji:"⛪"},
+  {id:"q4r9s3t6u8V", titulo:"🎬 Noche de Película Familiar", cat:"peliculas", emoji:"🎬"},
+  {id:"r5s0t4u7v9W", titulo:"📺 Programa del Domingo - Tropical Flow", cat:"programas", emoji:"📺"},
+  {id:"s6t1u5v8w0X", titulo:"🍞 Anuncio Local - Panadería de Villalba", cat:"anuncios", emoji:"🍞"},
+  {id:"t7u2v6w9x1Y", titulo:"📢 Anuncio - Negocios de El Pino", cat:"anuncios", emoji:"📢"}
 ];
-let indice = 0; let player;
+let lista = todosVideos;
+let indice = 0; let player; let filtroActual = 'todos';
 document.getElementById('total').innerText = lista.length;
-function dibujarLista(){
+function dibujar(){
   let html = "";
   lista.forEach((v,i)=>{
-    html += '<div id="item'+i+'" onclick="verVideo('+i+')">' + v.titulo + '</div>';
+    html += '<div class="item-video '+(i==indice?'activo':'')+'" onclick="verVideo('+i+')"><span class="emoji">'+v.emoji+'</span><div><b>'+v.titulo+'</b><small>'+v.cat+'</small></div></div>';
   });
   document.getElementById('listaVideos').innerHTML = html;
 }
-dibujarLista();
+dibujar();
 function onYouTubeIframeAPIReady(){
-  player = new YT.Player('player', {
-    height:'260', width:'100%', videoId: lista[0].id,
-    playerVars:{ autoplay:1, controls:1, playsinline:1, rel:0 },
-    events:{ onStateChange:onPlayerStateChange, onError:onPlayerError }
-  });
+  player = new YT.Player('player', { height:'280', width:'100%', videoId: lista[0].id, playerVars:{ autoplay:1, controls:1, playsinline:1, rel:0 }, events:{ onStateChange:onState, onError:onError } });
   actualizar();
 }
-function onPlayerStateChange(e){ if(e.data == YT.PlayerState.ENDED){ siguiente(); } }
-function onPlayerError(e){ siguiente(); }
+function onState(e){ if(e.data == YT.PlayerState.ENDED){ siguiente(); } }
+function onError(e){ siguiente(); }
 function actualizar(){
   document.getElementById('numero').innerText = indice + 1;
-  document.getElementById('ahoraSuena').innerText = '🎬 Ahora: ' + lista[indice].titulo;
-  lista.forEach((v,i)=>{
-    let el = document.getElementById('item'+i);
-    if(el){ el.className = (i==indice ? 'activo' : ''); }
-  });
+  document.getElementById('total').innerText = lista.length;
+  document.getElementById('ahoraSuena').innerText = lista[indice].titulo;
+  dibujar();
 }
 function darPlay(){ if(player && player.playVideo){ player.playVideo(); } }
 function verVideo(i){ indice = i; if(player){ player.loadVideoById(lista[indice].id); } actualizar(); }
 function siguiente(){ if(!player) return; indice = (indice + 1) % lista.length; player.loadVideoById(lista[indice].id); actualizar(); }
 function anterior(){ if(!player) return; indice = (indice - 1 + lista.length) % lista.length; player.loadVideoById(lista[indice].id); actualizar(); }
+function filtrar(cat){
+  filtroActual = cat;
+  document.querySelectorAll('.categorias button').forEach(b=>b.classList.remove('activo'));
+  if(cat=='todos'){ document.getElementById('cat-todos').classList.add('activo'); lista = todosVideos; }
+  if(cat=='munequitos'){ document.getElementById('cat-munequitos').classList.add('activo'); lista = todosVideos.filter(v=>v.cat=='munequitos'); }
+  if(cat=='ensenanzas'){ document.getElementById('cat-ensenanzas').classList.add('activo'); lista = todosVideos.filter(v=>v.cat=='ensenanzas'); }
+  if(cat=='peliculas'){ document.getElementById('cat-peliculas').classList.add('activo'); lista = todosVideos.filter(v=>v.cat=='peliculas'); }
+  if(cat=='programas'){ document.getElementById('cat-programas').classList.add('activo'); lista = todosVideos.filter(v=>v.cat=='programas'); }
+  if(cat=='anuncios'){ document.getElementById('cat-anuncios').classList.add('activo'); lista = todosVideos.filter(v=>v.cat=='anuncios'); }
+  indice = 0; if(player){ player.loadVideoById(lista[0].id); } actualizar();
+}
 </script>
-  </div>
-
-  <div class="card">
-    <h3>🙏 PARA LA FAMILIA</h3>
-    <p>Historias de la Biblia para los niños de El Pino y todo Puerto Rico.<br>
-    Dale PLAY y deja que corra solito, va cambiando de muñequito en muñequito.<br>
-    ¡Fe, familia y alegría!</p>
-  </div>
-</div>
-
-<div class="section" id="contacto" style="text-align:center;">
-  <div class="card">
-    <h3>📻 PIDE TU CANCIÓN / VIDEO</h3>
-    <p>¿Quieres que pongamos un muñequito o una canción?<br>Escríbenos y lo ponemos en Tropical Flow.</p>
-    <a class="whatsapp" href="https://wa.me/19393142657">💬 ESCRÍBENOS POR WHATSAPP</a>
-    <p style="margin-top:10px;">📍 El Pino, Villalba, Puerto Rico 🇵🇷<br>📺 Tropical Flow Radio TV - Tu Radio, Tu Familia</p>
-    <br>
-    <a class="btn" href="index.html">📻 IR A LA RADIO</a>
-  </div>
-</div>
-
-<footer>
-  © 2026 Tropical Flow Radio TV - Desde El Pino, Villalba, PR<br>
-  ¡Nos vemos en las patronales! 🎉
-</footer>
-
 </body>
 </html>
