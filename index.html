@@ -16,7 +16,133 @@
   .btn-tv{
     display:inline-block;margin-top:12px;background:#ff5c8a;color:white;
     padding:11px 24px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:16px;
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tropical Flow Radio - El Pino, Villalba</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+  body{background:#0a0a0a;color:white}
+  header{
+    background:linear-gradient(90deg,#ff0000,#ffcc00,#0050ff);
+    padding:18px 15px;text-align:center;
   }
+  header h1{font-size:30px;text-shadow:2px 2px 0 #000}
+  header p{font-weight:bold;margin-top:5px}
+  .btn-tv{
+    display:inline-block;margin-top:12px;background:#ff5c8a;color:white;
+    padding:11px 24px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:16px;
+  }
+  nav{background:#111;display:flex;justify-content:center;gap:15px;padding:12px;flex-wrap:wrap}
+  nav a{color:#ffcc00;text-decoration:none;font-weight:bold}
+  .hero{text-align:center;padding:35px 15px;background:#1a1a1a}
+  .hero h2{font-size:38px;color:#ffcc00;text-shadow:3px 3px 0 #000;line-height:1.1}
+  .hero h3{font-size:20px;margin-top:10px}
+  .hero p{margin-top:10px}
+  .btn{display:inline-block;margin-top:18px;background:#ff0000;color:white;padding:13px 26px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:17px}
+  .btn2{background:#ffcc00;color:black;margin-left:10px}
+  .section{padding:22px 15px;max-width:900px;margin:auto}
+  .card{background:#1a1a1a;border:2px solid #ffcc00;border-radius:15px;padding:20px;margin-bottom:18px;text-align:center}
+  .card h3{color:#ffcc00;font-size:21px;margin-bottom:10px}
+  .card p{font-size:15px;line-height:1.6}
+  audio{width:100%;margin-top:15px}
+  .artistas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .artista{background:#222;border:1px solid #444;border-radius:12px;padding:15px;width:150px;text-align:center}
+  .artista span{font-size:38px}
+  .artista b{display:block;margin-top:8px;color:#ffcc00}
+  footer{background:#111;text-align:center;padding:20px;font-size:13px;color:#aaa}
+  .whatsapp{background:#25D366;color:white;padding:13px 24px;border-radius:30px;text-decoration:none;display:inline-block;font-weight:bold;margin-top:12px}
+  .btn-play{background:#25D366;color:white;border:none;padding:14px 28px;border-radius:30px;font-weight:bold;font-size:18px;margin:12px 0;cursor:pointer}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎵 TROPICAL FLOW RADIO TV 📻</h1>
+  <p>DESDE EL PINO, VILLALBA - PARA TODO PUERTO RICO 🇵🇷</p>
+  <a class="btn-tv" href="tv.html">📺 IR A TV - Muñequitos Biblia</a>
+</header>
+
+<nav>
+  <a href="#inicio">INICIO</a>
+  <a href="#musica">MÚSICA</a>
+  <a href="#artistas">ARTISTAS</a>
+  <a href="#contacto">CONTACTO</a>
+  <a href="tv.html">📺 TV</a>
+</nav>
+
+<div class="hero" id="inicio">
+  <h2>TRES VOCES,<br>UN PUEBLO</h2>
+  <h3>🎶 Plena y Merengue Remix 🎶</h3>
+  <p>El himno de El Pino, Villalba - ¡Que suene el merengue!</p>
+  <a class="btn" href="#musica">▶️ ESCUCHAR AHORA</a>
+  <a class="btn btn2" href="tv.html">📺 VER TV</a>
+</div>
+
+<div class="section" id="musica">
+  <div class="card">
+    <h3>🎧 AHORA SONANDO</h3>
+    <p><b>TRES VOCES, UN PUEBLO</b><br>Tropical Flow Radio TV<br>Plena y Merengue desde El Pino</p>
+   <div id="player" style="width:100%; height:220px; border-radius:15px; overflow:hidden; background:#000;"></div>
+<h3 id="ahoraSuena" style="color:#fff; margin:10px 0; text-align:center;">🎵 Cargando Radio...</h3>
+<div style="text-align:center;">
+<button class="btn-play" onclick="darPlay()">▶️ DARLE PLAY A LA RADIO</button><br>
+<button onclick="anterior()" style="background:#fff; color:#000; border:none; padding:10px 15px; border-radius:20px; font-weight:bold;">⏮️ ANTERIOR</button>
+<button onclick="siguiente()" style="background:#FFD700; color:#000; border:none; padding:10px 20px; border-radius:20px; font-weight:bold;">SIGUIENTE ⏭️</button>
+<p style="font-size:12px; color:#aaa;">Canción <span id="numero">1</span> de <span id="total"></span></p>
+</div>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+const lista = ["GQ2ZLGRsRk4","RBE8A9rAj8Y","XYe0ZHVvVig","h86xW_G-j4s","5pKPlIlQa_8","wgqGHqhEZ8M","auTHP2prrxw","CL7m60BISiw","4jdbpZVzlf4","X_Df1rsXBjE","RWp76Pj0RUo","M9wQdkQicbk","FCu8-sim5F4","O6xVXaBcOac","jTqKxMTtVEI","4tXLT0hN8n8","n8RMGnc8v_o","XSAM8sUBAX4","tyqiwlOuKDA","tpi8zLE3Kqw","KZsmeh2122c","7IZF99TldP4","8bK5FzYBOX0","RcRjOpvks_w","fe474JBP5bo","hAwpckV1zJA","GfSmKZKUQgI","VQy8mWQ44IE","LYgUyNxcClc","Feo_d-SfjV4","9s5L2N86BhI","obW4BaZucn4","-rKiKWl5nrI","CzXfeG1wp7k","-YIJLs19HJA","hpom3ZHzfsc","OMEUGE3YBig","Lqt8KchvPWs","auhWaaNIB5Q","hEgqP_4DUKQ","IF6B0L5G45U","H5ZrvB6FEyc","aH-4J_Q0lZk","w5L_iNnWgUo","d6brc8barHQ","4HF0QkBYRRc","r9lBTeBqgUc","BrmcXdYuycU","vwdopSnsMLs","lb3lY9c2LPk","-XOt6cizYdo","4vkhB6MiJ-k","BziR7lSh1Pw","4cTZpoRd54k","Q1u_kOWlgs4","Ob9I449fZn4","21Pk_j4buY4","t_LrxMpLxis","MTuM7D2p3Cg","jF2XJxAp_v8","kf6RLeOs5ow","6wbwxXcJkGc","i-HD5_2WDYU","2ioucs6HOUU","IQ3wXbkJJZA","x1dbS39QrlI","cJ5gu-mlyv4","olJRGdZKv8Q","vrfFNZZXFsE","3oh5z387ozY","OTSVayj-9Os","FbRSDpKEyac","tCl5mJkta04","Ya9r0wGichw","pt92h8rvZxU","s-mDRPkEZBk","pvAthjIlnuc","aNOiqSYOe9E","DeDPrhD_BLw","6654k9MfoBA","mTSm_5sOFvQ","WjR7mf0S6wQ","KB0Egwr3BkY","jeUo8mLQbGg","c1EwHvbPv0o","JqfDYSLP1Co","7gS7-_9PBxM","yVBHbPsHIjk","OrRPR0AdPV4","Tf2o36-T2XY","AEj6xbGy64c","idpPD42Nh7I","Q1EyMFTPZrs","8GZfyUKXugQ","hW2mAMEx8mo","2ZXs_FrB7co","D5y4xpKdux4","1Z_lmKtf6RY","J1Dz86UCL_M","c5NA5EBpOw4","40XaVZBfXmc","9CZ9cYu-yCk","c1j1QbnEvFA","nddBuDbhlkQ","W4Gbz8DhDKs","yHHX8bsht1w","tYYa-djM5j8","l8wTJMbCsQ8","OixrDR8sVhc","FVYjdghFIfo","VBdLpH8R3Y8","2r7CnIp9oLI","-vj-a-e0Rf4","34eiZ9Hd-fA","pjrhSRCIZDk","mKjKgaOWQn8","YHQJkK9NpE0","nGsT-sqaQNg","o40JNCThI8M","rWhjBlsXhVw","mrXKNFXHEqo","7tE_xKxat9c","u9b83ujltH8","TZMCYoWntqY","U1drf9cCHHk","qVzECaje5CE","Bsmz-VxXpyY","FG1Va_rL6W0","PCDYOTWQ9uc","doD3StRKwKA","iLuKRoUi4Lc","PKolClrUVSQ","xH_qmGwHIhY","OPmAxqBfR3E","BnhZkrNclVw","SFmXwGf1kYU","DAbkUKBLvak","UK4aj9gV66s","ILWO9Hyo_yo","_bFrGBuzxew","phWbH7OCcHk","fnGZn3tkjYA","Er52V4C62wU","NBOlGhmv4lw","kRZjFGGCR24","beYTZkJMifw","88WnXr9X4yM","bbcs8Jv_k6w","w3ybiJjm0wo","CXlqcerd2Ew","meyVBz_Pl5Q","rZ-8_R2L19o","cv5uXAxaWDc","0iGJpS2Cq8Q","LYN2UfUwKnE","A3-XQXcxM0w","Qvxrrwj64hU","j1IrGdubgbQ","nN36VD0KJWM","l3bLYUyXodg","3nBOTAh6IZk","dnDAXZanv2U","LSNOmJcDotk","WZ8aVVeObY4","zI7B_VzfvAg","_B-pvX_aCvs","iJODIeE7YDI","qXYh87QuIJA","dj2HB8Og7pc","_uaVW3Hb5-A","az_NAGXp62U","iLwcDQF3Lnw","FwLrBJsI2dA","TgB4Q1Ksngw","ImjU6A3-iuw","hBcgEwQlYq8","G45a_RfjF6U","ZvXQYzJotrc","PjASVaS1t-c","hjiUmXelGec","AMZib_rbtKY","sFBVPMbAKYE","ECqNj6oRkJA","EsPLJiiewLU","AHBbhiXeLlg","HKImVnl-gVE","PL9Tjx_4qMg","pABUiQHNilQ","RHcCi4oCSII","3bRgXZWBZso","cDNLpf_hBL4","Wf97aNEgkek","XLFzxttqW3I","aWBrILDNR60","-AASFkfoZ4U","7GUWKS_FGWg","qUqPWYGZuFg","61BiEq0JmB0","Yy63WTN6dUc","RIsCkK42TrA","P9R21ADoSNE","9qvV4MC4nKU","F3ttnmlARac","zseh7JgR8Ag"];
+let indice = 0; let player;
+document.getElementById('total').innerText = lista.length;
+function onYouTubeIframeAPIReady(){ player = new YT.Player('player', { height: '220', width: '100%', videoId: lista[0], playerVars: { autoplay: 1, controls: 1, playsinline: 1, rel: 0 }, events: { onStateChange: onPlayerStateChange, onError: onPlayerError } }); actualizar(); }
+function onPlayerStateChange(event){ if(event.data == YT.PlayerState.ENDED){ siguiente(); } }
+function onPlayerError(event){ siguiente(); }
+function actualizar(){ document.getElementById('numero').innerText = indice + 1; document.getElementById('ahoraSuena').innerText = '🎵 Sonando ahora: Canción ' + (indice+1); }
+function darPlay(){ if(player && player.playVideo){ player.playVideo(); } }
+function siguiente(){ if(!player) return; indice = (indice + 1) % lista.length; player.loadVideoById(lista[indice]); actualizar(); }
+function anterior(){ if(!player) return; indice = (indice - 1 + lista.length) % lista.length; player.loadVideoById(lista[indice]); actualizar(); }
+</script>
+  </div>
+
+  <div class="card">
+    <h3>🎵 MÁS MÚSICA</h3>
+    <p>1. Que Suene El Merengue - Tropical Flow<br>
+    2. Tres Voces, Un Pueblo - Plena Merengue Remix<br>
+    3. El Himno de El Pino - Próximamente</p>
+  </div>
+</div>
+
+<div class="section" id="artistas">
+  <h3 style="text-align:center;color:#ffcc00;margin-bottom:15px;">🎤 LOS 3 ARTISTAS</h3>
+  <div class="artistas">
+    <div class="artista"><span>🧑🏽‍🎤</span><b>CANTANTE 1</b><br>Joven<br>El Flow de El Pino</div>
+    <div class="artista"><span>👩🏽‍🎤</span><b>CANTANTE 2</b><br>La Voz Femenina<br>La Reina de la Plena</div>
+    <div class="artista"><span>🎙️</span><b>CANTANTE 3</b><br>El Veterano<br>40 Años de Plena</div>
+  </div>
+</div>
+
+<div class="section" id="contacto" style="text-align:center;">
+  <div class="card">
+    <h3>📻 PIDE TU CANCIÓN</h3>
+    <p>¿Quieres que suene tu barrio en la radio?<br>Escríbenos y lo ponemos en Tropical Flow.</p>
+    <a class="whatsapp" href="https://wa.me/19393142657">💬 ESCRÍBENOS POR WHATSAPP</a>
+    <p style="margin-top:10px;">📍 El Pino, Villalba, Puerto Rico 🇵🇷<br>📺 Tropical Flow Radio TV - Tu Radio, Tu Familia</p>
+    <br>
+    <a class="btn" href="tv.html">📺 IR A TROPICAL FLOW TV</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Tropical Flow Radio TV - Desde El Pino, Villalba, PR<br>
+  ¡Nos vemos en las patronales! 🎉
+</footer>
+
+</body>
+</html>
   nav{background:#111;display:flex;justify-content:center;gap:15px;padding:12px;flex-wrap:wrap}
   nav a{color:#ffcc00;text-decoration:none;font-weight:bold}
   .hero{text-align:center;padding:35px 15px;background:#1a1a1a}
