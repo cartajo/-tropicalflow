@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tropical Flow Radio - El Pino, Villalba</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+  body{background:#0a0a0a;color:white}
+  header{
+    background:linear-gradient(90deg,#ff0000,#ffcc00,#0050ff);
+    padding:18px 15px;text-align:center;
+  }
+  header h1{font-size:30px;text-shadow:2px 2px 0 #000}
+  header p{font-weight:bold;margin-top:5px}
+  .btn-tv{
+    display:inline-block;margin-top:12px;background:#ff5c8a;color:white;
+    padding:11px 24px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:16px;
+  }
+  nav{background:#111;display:flex;justify-content:center;gap:15px;padding:12px;flex-wrap:wrap}
+  nav a{color:#ffcc00;text-decoration:none;font-weight:bold}
+  .hero{text-align:center;padding:35px 15px;background:#1a1a1a}
+  .hero h2{font-size:38px;color:#ffcc00;text-shadow:3px 3px 0 #000;line-height:1.1}
+  .hero h3{font-size:20px;margin-top:10px}
+  .hero p{margin-top:10px}
+  .btn{display:inline-block;margin-top:18px;background:#ff0000;color:white;padding:13px 26px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:17px}
+  .btn2{background:#ffcc00;color:black;margin-left:10px}
+  .section{padding:22px 15px;max-width:900px;margin:auto}
+  .card{background:#1a1a1a;border:2px solid #ffcc00;border-radius:15px;padding:20px;margin-bottom:18px;text-align:center}
+  .card h3{color:#ffcc00;font-size:21px;margin-bottom:10px}
+  .card p{font-size:15px;line-height:1.6}
+  audio{width:100%;margin-top:15px}
+  .artistas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .artista{background:#222;border:1px solid #444;border-radius:12px;padding:15px;width:150px;text-align:center}
+  .artista span{font-size:38px}
+  .artista b{display:block;margin-top:8px;color:#ffcc00}
+  footer{background:#111;text-align:center;padding:20px;font-size:13px;color:#aaa}
+  .whatsapp{background:#25D366;color:white;padding:13px 24px;border-radius:30px;text-decoration:none;display:inline-block;font-weight:bold;margin-top:12px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎵 TROPICAL FLOW RADIO TV 📻</h1>
+  <p>DESDE EL PINO, VILLALBA - PARA TODO PUERTO RICO 🇵🇷</p>
+  <a class="btn-tv" href="tv.html">📺 IR A TV - Muñequitos Biblia</a>
+</header>
+
+<nav>
+  <a href="#inicio">INICIO</a>
+  <a href="#musica">MÚSICA</a>
+  <a href="#artistas">ARTISTAS</a>
+  <a href="#contacto">CONTACTO</a>
+  <a href="tv.html">📺 TV</a>
+</nav>
+
+<div class="hero" id="inicio">
+  <h2>TRES VOCES,<br>UN PUEBLO</h2>
+  <h3>🎶 Plena y Merengue Remix 🎶</h3>
+  <p>El himno de El Pino, Villalba - ¡Que suene el merengue!</p>
+  <a class="btn" href="#musica">▶️ ESCUCHAR AHORA</a>
+  <a class="btn btn2" href="tv.html">📺 VER TV</a>
+</div>
+
+<div class="section" id="musica">
+  <div class="card">
+    <h3>🎧 AHORA SONANDO</h3>
+    <p><b>TRES VOCES, UN PUEBLO</b><br>Tropical Flow Radio TV<br>Plena y Merengue desde El Pino</p>
+    <!-- CAMBIA EL ARCHIVO POR TU MP3 DE MUSICHERO -->
+    <audio controls>
+      <source src="tres-voces-un-pueblo.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+    <p style="margin-top:10px;font-size:13px;color:#aaa;">Sube tu MP3 con el nombre tres-voces-un-pueblo.mp3</p>
+  </div>
+
+  <div class="card">
+    <h3>🎵 MÁS MÚSICA</h3>
+    <p>1. Que Suene El Merengue - Tropical Flow<br>
+    2. Tres Voces, Un Pueblo - Plena Merengue Remix<br>
+    3. El Himno de El Pino - Próximamente</p>
+  </div>
+</div>
+
+<div class="section" id="artistas">
+  <h3 style="text-align:center;color:#ffcc00;margin-bottom:15px;">🎤 LOS 3 ARTISTAS</h3>
+  <div class="artistas">
+    <div class="artista"><span>🧑🏽‍🎤</span><b>CANTANTE 1</b><br>Joven<br>El Flow de El Pino</div>
+    <div class="artista"><span>👩🏽‍🎤</span><b>CANTANTE 2</b><br>La Voz Femenina<br>La Reina de la Plena</div>
+    <div class="artista"><span>🎙️</span><b>CANTANTE 3</b><br>El Veterano<br>40 Años de Plena</div>
+  </div>
+</div>
+
+<div class="section" id="contacto" style="text-align:center;">
+  <div class="card">
+    <h3>📻 PIDE TU CANCIÓN</h3>
+    <p>¿Quieres que suene tu barrio en la radio?<br>Escríbenos y lo ponemos en Tropical Flow.</p>
+    <a class="whatsapp" href="https://wa.me/17870000000">💬 ESCRÍBENOS POR WHATSAPP</a>
+    <p style="margin-top:12px;font-size:13px;">Cambia el número 17870000000 por tu número real</p>
+    <p style="margin-top:10px;">📍 El Pino, Villalba, Puerto Rico 🇵🇷<br>📺 Tropical Flow Radio TV - Tu Radio, Tu Familia</p>
+    <br>
+    <a class="btn" href="tv.html">📺 IR A TROPICAL FLOW TV</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Tropical Flow Radio TV - Desde El Pino, Villalba, PR<br>
+  ¡Nos vemos en las patronales! 🎉
+</footer>
+
+</body>
+</html>
