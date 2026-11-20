@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tropical Flow TV - Muñequitos Biblia</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+  body{background:#fff5f8;color:#333}
+  header{
+    background: linear-gradient(90deg,#ff8fb3,#ffb3c9,#5eead4,#2dd4bf);
+    padding:18px 15px;text-align:center;position:relative;
+  }
+  header h1{font-size:32px;color:white;text-shadow:2px 2px 0 #ff5c8a;letter-spacing:1px}
+  header p{color:white;font-weight:bold;margin-top:4px;text-shadow:1px 1px 0 #ff5c8a}
+  .volver{
+    display:inline-block;margin-top:12px;background:#ff5c8a;color:white;
+    padding:10px 22px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:15px;
+    box-shadow:0 4px 0 #d13a6a;
+  }
+  .hero{max-width:1000px;margin:20px auto;padding:0 15px}
+  .video-principal{
+    background:#000;border-radius:20px;overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);border:4px solid #ff8fb3;
+  }
+  .video-principal iframe{width:100%;height:380px;border:none;display:block}
+  .video-info{padding:15px;background:white}
+  .video-info h2{font-size:22px;color:#ff5c8a}
+  .video-info p{font-size:14px;color:#666;margin-top:5px;line-height:1.5}
+  .play-btn{
+    display:inline-block;margin-top:10px;background:#2dd4bf;color:white;
+    padding:10px 20px;border-radius:20px;font-weight:bold;text-decoration:none;
+  }
+  .botones{
+    max-width:1000px;margin:20px auto;padding:0 15px;
+    display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+  }
+  .botones button{
+    border:none;cursor:pointer;padding:14px 18px;border-radius:30px;
+    font-weight:bold;font-size:15px;color:white;flex:1;min-width:140px;
+  }
+  .b1{background:#ff5c8a} .b2{background:#2dd4bf} .b3{background:#f59e0b}
+  .b4{background:#8b5cf6} .b5{background:#06b6d4}
+  .botones button.active{outline:3px solid #333;transform:scale(1.05)}
+  .seccion{max-width:1000px;margin:0 auto;padding:10px 15px 30px}
+  .seccion h3{font-size:22px;color:#ff5c8a;margin:20px 0 12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px}
+  .card{
+    background:white;border-radius:16px;overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);cursor:pointer;border:2px solid #ffe4ec;
+  }
+  .card img{width:100%;height:130px;object-fit:cover;display:block;background:#ffd6e3}
+  .card div{padding:12px}
+  .card b{font-size:15px;display:block}
+  .card span{font-size:13px;color:#888}
+  .card:hover{transform:scale(1.02)}
+  footer{background:#ff8fb3;color:white;text-align:center;padding:20px;font-size:13px;margin-top:10px}
+  footer a{color:white;font-weight:bold}
+  @media(max-width:600px){ .video-principal iframe{height:220px} header h1{font-size:26px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div style="font-size:22px;">🌸🌺🌸🌺🌸</div>
+  <h1>🌸 TROPICAL FLOW TV 📺</h1>
+  <p>Desde EL PINO, Villalba - Para toda la familia 🇵🇷</p>
+  <a class="volver" href="index.html">🎵 ⬅️ Volver a Radio</a>
+</header>
+
+<!-- VIDEO GRANDE -->
+<div class="hero">
+  <div class="video-principal">
+    <!-- CAMBIA EL ID DE YOUTUBE ABAJO -->
+    <iframe id="videoGrande" src="https://www.youtube.com/embed/TU-ID-ARCA-DE-NOE" allowfullscreen></iframe>
+    <div class="video-info">
+      <h2 id="tituloGrande">🌈 Arca de Noé - Muñequitos Biblia</h2>
+      <p id="descGrande">Los animalitos suben al arca con Noé. Una historia divertida para los niños de El Pino y todo Puerto Rico. ¡Dale PLAY y aprende con nosotros!</p>
+      <a class="play-btn" href="#" onclick="document.getElementById('videoGrande').src=document.getElementById('videoGrande').src; return false;">▶️ VER AHORA</a>
+    </div>
+  </div>
+</div>
+
+<!-- 5 BOTONES -->
+<div class="botones">
+  <button class="b1 active" onclick="filtrar('munecos',this)">🧒 Muñequitos Biblia</button>
+  <button class="b2" onclick="filtrar('ensenanza',this)">📖 Enseñanzas</button>
+  <button class="b3" onclick="filtrar('peliculas',this)">🎬 Películas</button>
+  <button class="b4" onclick="filtrar('programas',this)">📺 Programas</button>
+  <button class="b5" onclick="filtrar('anuncios',this)">📢 Anuncios</button>
+</div>
+
+<!-- RECOMENDADOS -->
+<div class="seccion">
+  <h3>✨ Recomendados para ti</h3>
+  <div class="grid" id="listaVideos">
+
+    <div class="card" data-cat="munecos" onclick="verVideo('TU-ID-1','🌈 Arca de Noé - Muñequitos Biblia','Los animalitos suben al arca con Noé.')">
+      <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400" alt="Arca de Noe">
+      <div><b>🌈 Arca de Noé</b><span>Muñequitos Biblia • 5 min</span></div>
+    </div>
+
+    <div class="card" data-cat="munecos" onclick="verVideo('TU-ID-2','🦁 Daniel y los Leones','Daniel ora y Dios lo cuida.')">
+      <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=400" alt="Daniel">
+      <div><b>🦁 Daniel y los Leones</b><span>Cartoon Bible Kids • 6 min</span></div>
+    </div>
+
+    <div class="card" data-cat="ensenanza" onclick="verVideo('TU-ID-3','📖 Enseñanza en la Iglesia','Estudio bíblico del domingo.')">
+      <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=400" alt="Enseñanza">
+      <div><b>📖 Enseñanza en la Iglesia</b><span>Enseñanzas • 20 min</span></div>
+    </div>
+
+    <div class="card" data-cat="peliculas" onclick="verVideo('TU-ID-4','🎬 Noche de Película Familiar','Película para toda la familia.')">
+      <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400" alt="Pelicula">
+      <div><b>🎬 Noche de Película Familiar</b><span>Películas • 1h 30m</span></div>
+    </div>
+
+    <div class="card" data-cat="programas" onclick="verVideo('TU-ID-5','📺 Programa del Domingo','Tu programa de Tropical Flow TV.')">
+      <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400" alt="Programa">
+      <div><b>📺 Programa del Domingo</b><span>Programas • 30 min</span></div>
+    </div>
+
+    <div class="card" data-cat="anuncios" onclick="verVideo('TU-ID-6','🥐 Anuncio Panadería de Villalba','Apoya lo local, apoya a Villalba.')">
+      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400" alt="Panaderia">
+      <div><b>🥐 Panadería de Villalba</b><span>Anuncio Local • 1 min</span></div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-top:25px; background:#e0f7f5; padding:20px; border-radius:15px;">
+    <h3 style="color:#0d9488;">➕ ¿Quieres añadir un video nuevo?</h3>
+    <p style="font-size:14px;">Solo copia una tarjeta de arriba, cambia el ID de YouTube, el título y la foto. ¡Y ya! No hay que hacer otra app.</p>
+    <a href="https://wa.me/17870000000" style="display:inline-block; margin-top:10px; background:#25D366; color:white; padding:12px 22px; border-radius:25px; text-decoration:none; font-weight:bold;">💬 Mándame tu video por WhatsApp</a>
+    <p style="font-size:12px; color:#888; margin-top:8px;">Cambia el número por tu número real</p>
+  </div>
+</div>
+
+<footer>
+  🌸 TROPICAL FLOW TV - Tu TV, Tu Familia 🌸<br>
+  Desde El Pino, Villalba, Puerto Rico 🇵🇷<br>
+  <a href="index.html">🎵 Volver a Radio</a> | <a href="#">📺 Tropical Flow TV</a><br><br>
+  © 2026 Tropical Flow Radio TV
+</footer>
+
+<script>
+function verVideo(id, titulo, desc){
+  document.getElementById('videoGrande').src = 'https://www.youtube.com/embed/' + id;
+  document.getElementById('tituloGrande').innerText = titulo;
+  document.getElementById('descGrande').innerText = desc;
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function filtrar(cat, btn){
+  document.querySelectorAll('.botones button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#listaVideos .card').forEach(c=>{
+    if(cat==='todos' || c.getAttribute('data-cat')===cat){ c.style.display='block'; }
+    else { c.style.display='none'; }
+  });
+}
+</script>
+
+</body>
+</html>
