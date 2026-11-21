@@ -12,7 +12,7 @@
   header p{font-weight:bold;margin-top:6px;font-size:14px}
   .btn-radio{display:inline-block;margin-top:12px;background:#ff5c8a;color:white;padding:11px 24px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:15px;border:2px solid white}
   .section{padding:20px 15px;max-width:950px;margin:auto}
-  .video-box{background:#000;border:3px solid #ff5c8a;border-radius:18px;overflow:hidden}
+  .video-box{background:#000;border:3px solid #00d2c6;border-radius:18px;overflow:hidden}
   #player{width:100%;height:280px}
   .titulo-video{text-align:center;margin:14px 0 6px;font-size:20px;color:#ffcc00}
   .sub-video{text-align:center;color:#ccc;font-size:14px}
@@ -56,7 +56,7 @@
   <!-- AQUI ARRIBA VAN LOS MUÑEQUITOS - NO BORRAR -->
   <div class="video-box"><div id="player"></div></div>
   <h2 class="titulo-video" id="ahoraSuena">🌈 Arca de Noé - Muñequitos Biblia</h2>
-  <p class="sub-video">Video <span id="numero">1</span> de <span id="total"></span> • Tropical Flow TV • El Pino, Villalba</p>
+  <p class="sub-video">Video <span id="numero">1</span> de <span id="total"></span> • Tropical Flow TV • </p>
   <button class="btn-play" onclick="darPlay()">▶️ DARLE PLAY A LA TV</button>
   <div class="controles">
     <button class="btn-ant" onclick="anterior()">⏮️ ANTERIOR</button>
@@ -75,8 +75,8 @@
   <div class="lista-videos" id="listaVideos"></div>
 
   <!-- TV EN VIVO - GRATIS Y LEGAL -->
-  <div class="card" style="border-color:#ff0000;">
-    <h3 style="color:#ff0000;">🔴 TV EN VIVO - GRATIS</h3>
+  <div class="card">
+   <h3>🔴 TV EN VIVO - GRATIS</h3>
     <p>Canales públicos en vivo, 24 horas. Escoge uno:</p>
     <div class="categorias">
       <button onclick="cambiarVivo('yZh3xsFqCt8','DW Latinoamérica - Noticias')">📰 DW LATINO</button>
@@ -84,7 +84,7 @@
       <button onclick="cambiarVivo('h7bvV0q3LHg','France 24 Español')">🌍 FRANCE 24</button>
       <button onclick="cambiarVivo('21X5lGlDOfg','NASA TV - Espacio en Vivo')">🚀 NASA</button>
     </div>
-    <div class="video-box" style="border-color:#ff0000;">
+    <div class="video-box">
       <iframe id="vivoPlayer" width="100%" height="280" src="https://www.youtube.com/embed/yZh3xsFqCt8?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
     <p id="vivoTitulo" style="margin-top:10px; color:#ffcc00; font-weight:bold;">🔴 AHORA: DW Latinoamérica - Noticias</p>
@@ -112,7 +112,7 @@
   </div>
 </div>
 
-<footer>© 2026 Tropical Flow Radio TV - Desde El Pino, Villalba, PR<br>¡Nos vemos en las patronales! 🎉</footer>
+<footer>© 2026 Tropical Flow Radio TV - Desde, Villalba, PR<br>¡Señal Digital! 🎉</footer>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
