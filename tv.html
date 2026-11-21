@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tropical Flow TV - Villalba,PR</title>
+<title>Tropical Flow TV - El Pino, Villalba</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
   body{background:#0f0f1a;color:white}
@@ -48,14 +48,15 @@
 
 <header>
   <h1>🌸📺 TROPICAL FLOW TV 📺🌸</h1>
-  <p>DESDE, VILLALBA - PARA TODO PUERTO RICO 🇵🇷 Y EL MUNDO</p>
+  <p>DESDE EL PINO, VILLALBA - PARA TODO PUERTO RICO 🇵🇷 Y EL MUNDO</p>
   <a class="btn-radio" href="index.html">💖 VOLVER A RADIO</a>
 </header>
 
 <div class="section">
+  <!-- AQUI ARRIBA VAN LOS MUÑEQUITOS - NO BORRAR -->
   <div class="video-box"><div id="player"></div></div>
   <h2 class="titulo-video" id="ahoraSuena">🌈 Arca de Noé - Muñequitos Biblia</h2>
-  <p class="sub-video">Video <span id="numero">1</span> de <span id="total"></span> • Tropical Flow TV •</p>
+  <p class="sub-video">Video <span id="numero">1</span> de <span id="total"></span> • Tropical Flow TV • El Pino, Villalba</p>
   <button class="btn-play" onclick="darPlay()">▶️ DARLE PLAY A LA TV</button>
   <div class="controles">
     <button class="btn-ant" onclick="anterior()">⏮️ ANTERIOR</button>
@@ -73,28 +74,45 @@
 
   <div class="lista-videos" id="listaVideos"></div>
 
+  <!-- TV EN VIVO - GRATIS Y LEGAL -->
+  <div class="card" style="border-color:#ff0000;">
+    <h3 style="color:#ff0000;">🔴 TV EN VIVO - GRATIS</h3>
+    <p>Canales públicos en vivo, 24 horas. Escoge uno:</p>
+    <div class="categorias">
+      <button onclick="cambiarVivo('yZh3xsFqCt8','DW Latinoamérica - Noticias')">📰 DW LATINO</button>
+      <button onclick="cambiarVivo('03pYP2Nmreo','Vatican Media Live - Misas')">⛪ VATICANO</button>
+      <button onclick="cambiarVivo('h7bvV0q3LHg','France 24 Español')">🌍 FRANCE 24</button>
+      <button onclick="cambiarVivo('21X5lGlDOfg','NASA TV - Espacio en Vivo')">🚀 NASA</button>
+    </div>
+    <div class="video-box" style="border-color:#ff0000;">
+      <iframe id="vivoPlayer" width="100%" height="280" src="https://www.youtube.com/embed/yZh3xsFqCt8?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <p id="vivoTitulo" style="margin-top:10px; color:#ffcc00; font-weight:bold;">🔴 AHORA: DW Latinoamérica - Noticias</p>
+  </div>
 
   <div class="card">
     <h3>⭐ RECOMENDADOS PARA TI</h3>
-    <p> Escoge lo que quieres ver</p>
+    <p>Escoge lo que quieres ver</p>
     <div class="recomendados">
-      <div class="rec" onclick="verVideo(0)"><span>🌈</span><b>PELICULAS</b><small>Muñequitos Biblia</small></div>
-      <div class="rec" onclick="verVideo(4)"><span>🎬</span><b> PELICULAS</b><small>Película Familiar</small></div>
-      <div class="rec" onclick="verVideo(6)"><span>⛪</span><b>MUSICA CRISTIANA</b><small>Enseñanza</small></div>
-      <div class="rec" onclick="verVideo(7)"><span>🍞</span><b>ANUCIO - TU NEGOCIO AQUI</b><small>Anuncio </small></div>
+      <div class="rec" onclick="verVideo(0)"><span>🌈</span><b>MUÑEQUITOS BIBLIA</b><small>Arca de Noé</small></div>
+      <div class="rec" onclick="verVideo(4)"><span>🎬</span><b>PELÍCULAS</b><small>Película Familiar</small></div>
+      <div class="rec" onclick="verVideo(6)"><span>⛪</span><b>MÚSICA CRISTIANA</b><small>Enseñanza</small></div>
+      <div class="rec" onclick="verVideo(7)"><span>📢</span><b>ANUNCIO - TU NEGOCIO AQUÍ</b><small>Anuncio</small></div>
+      <div class="rec" onclick="cambiarVivo('03pYP2Nmreo','Vatican Media Live - Misas')"><span>🔴</span><b>TV EN VIVO - VATICANO</b><small>Misas en Vivo</small></div>
+      <div class="rec" onclick="cambiarVivo('yZh3xsFqCt8','DW Latinoamérica')"><span>📰</span><b>TV EN VIVO - NOTICIAS</b><small>DW Latino</small></div>
     </div>
   </div>
 
   <div class="card">
     <h3>🙏 PARA LA FAMILIA</h3>
-    <p>Historias de la Biblia para los niños de todo PR y El Mundo.<br>Dale PLAY y deja que corra solito, va cambiando de muñequito en muñequito.</p>
+    <p>Historias de la Biblia para los niños de El Pino y todo Puerto Rico.<br>Dale PLAY y deja que corra solito, va cambiando de muñequito en muñequito.</p>
     <p style="margin-top:12px;">¿Quieres que pongamos tu video, tu negocio o tu iglesia?<br>Escríbenos y lo ponemos en Tropical Flow TV.</p>
     <a class="whatsapp" href="https://wa.me/19393142657">💬 ESCRÍBENOS POR WHATSAPP</a>
     <br><a class="btn" href="index.html">📻 IR A LA RADIO</a>
   </div>
 </div>
 
-<footer>© 2026 Tropical Flow Radio TV - Desde, Villalba, PR<br>¡Señal Digital! </footer>
+<footer>© 2026 Tropical Flow Radio TV - Desde El Pino, Villalba, PR<br>¡Nos vemos en las patronales! 🎉</footer>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
@@ -133,7 +151,7 @@ function actualizar(){
   dibujar();
 }
 function darPlay(){ if(player && player.playVideo){ player.playVideo(); } }
-function verVideo(i){ indice = i; if(player){ player.loadVideoById(lista[indice].id); } actualizar(); }
+function verVideo(i){ indice = i; if(player){ player.loadVideoById(lista[indice].id); } actualizar(); window.scrollTo({top:0, behavior:'smooth'}); }
 function siguiente(){ if(!player) return; indice = (indice + 1) % lista.length; player.loadVideoById(lista[indice].id); actualizar(); }
 function anterior(){ if(!player) return; indice = (indice - 1 + lista.length) % lista.length; player.loadVideoById(lista[indice].id); actualizar(); }
 function filtrar(cat){
@@ -145,6 +163,11 @@ function filtrar(cat){
   if(cat=='programas'){ document.getElementById('cat-programas').classList.add('activo'); lista = todosVideos.filter(v=>v.cat=='peliculas'); }
   if(cat=='anuncios'){ document.getElementById('cat-anuncios').classList.add('activo'); lista = todosVideos.filter(v=>v.cat=='anuncios'); }
   indice = 0; if(player){ player.loadVideoById(lista[0].id); } actualizar();
+}
+function cambiarVivo(id, nombre){
+  document.getElementById('vivoPlayer').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&mute=0';
+  document.getElementById('vivoTitulo').innerText = '🔴 AHORA: ' + nombre;
+  document.getElementById('vivoPlayer').scrollIntoView({behavior:'smooth', block:'center'});
 }
 </script>
 </body>
