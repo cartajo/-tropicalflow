@@ -72,28 +72,7 @@
   </div>
 
   <div class="lista-videos" id="listaVideos"></div>
-<!-- TV EN VIVO - GRATIS Y LEGAL -->
-<div class="card" style="border-color:#ff0000;">
-  <h3 style="color:#ff0000;">🔴 TV EN VIVO - GRATIS</h3>
-  <p>Canales públicos en vivo, 24 horas. Escoge uno:</p>
-  <div class="categorias">
-    <button onclick="cambiarVivo('yZh3xsFqCt8','DW Latinoamérica - Noticias')">📰 DW LATINO</button>
-    <button onclick="cambiarVivo('03pYP2Nmreo','Vatican Media Live - Misas')">⛪ VATICANO</button>
-    <button onclick="cambiarVivo('h7bvV0q3LHg','France 24 Español')">🌍 FRANCE 24</button>
-    <button onclick="cambiarVivo('21X5lGlDOfg','NASA TV - Espacio en Vivo')">🚀 NASA</button>
-  </div>
-  <div class="video-box" style="border-color:#ff0000;">
-    <iframe id="vivoPlayer" width="100%" height="280" src="https://www.youtube.com/embed/yZh3xsFqCt8?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-  <p id="vivoTitulo" style="margin-top:10px; color:#ffcc00; font-weight:bold;">🔴 AHORA: DW Latinoamérica - Noticias</p>
-</div>
 
-<script>
-function cambiarVivo(id, nombre){
-  document.getElementById('vivoPlayer').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&mute=0';
-  document.getElementById('vivoTitulo').innerText = '🔴 AHORA: ' + nombre;
-}
-</script>
 
   <div class="card">
     <h3>⭐ RECOMENDADOS PARA TI</h3>
